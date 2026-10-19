@@ -1,0 +1,53 @@
+name: Update org stats
+
+on:
+  schedule:
+    # 03:17 UTC daily - keeps the profile numbers fresh without a human in the loop
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Regenerate even if nothing changed"
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-org-stats
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci --omit=optional
+
+      - name: Fetch org data and inject into the profile README
+        env:
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN }}
+          GITHUB_ORG: Xili-AI
+        run: node tools/gen-stats.js
+
+      - name: Rebuild local preview
+        run: node tools/preview.js
+
+      - name: Commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add profile/README.md assets/stats/snapshot.json preview.html
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "chore(stats): refresh org stats from GitHub API"
+            git push
+          fi

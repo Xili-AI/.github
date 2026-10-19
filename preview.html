@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-color-mode="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>XILI-AI Profile Preview</title>
+<style>
+  :root{
+    --fg-default:#e6edf3; --fg-muted:#8b949e; --bg-canvas:#0d1117; --bg-subtle:#161b22;
+    --border:#30363d; --accent:#58a6ff; --border-muted:#21262d;
+    --code-bg:#151b23; --shadow:0 1px 0 rgba(1,4,9,.04),0 8px 24px rgba(1,4,9,.28);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg-canvas);color:var(--fg-default);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,
+    "PingFang SC","Microsoft YaHei",sans-serif;
+    font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;}
+  .page{max-width:1012px;margin:0 auto;padding:32px 24px 80px;}
+  .banner{background:var(--bg-subtle);border:1px solid var(--border-muted);border-radius:12px;
+    padding:22px 26px;margin-bottom:28px;box-shadow:var(--shadow);}
+  .banner h1{font-size:20px;margin:0 0 6px;}
+  .banner p{margin:0;color:var(--fg-muted);font-size:14px;}
+  .markdown-body{font-size:16px;line-height:1.6;word-wrap:break-word;}
+  .markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4{
+    margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25;}
+  .markdown-body h1{padding-bottom:.3em;border-bottom:1px solid var(--border-muted);font-size:2em;}
+  .markdown-body h2{padding-bottom:.3em;border-bottom:1px solid var(--border-muted);font-size:1.5em;}
+  .markdown-body h3{font-size:1.25em;}
+  .markdown-body p{margin-top:0;margin-bottom:16px;}
+  .markdown-body a{color:var(--accent);text-decoration:none;}
+  .markdown-body a:hover{text-decoration:underline;}
+  .markdown-body img{max-width:100%;box-sizing:content-box;background-color:transparent;}
+  .markdown-body code,.markdown-body tt{padding:.2em .4em;margin:0;font-size:85%;
+    background-color:var(--code-bg);border-radius:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
+  .markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;
+    background-color:var(--code-bg);border-radius:6px;}
+  .markdown-body pre code{padding:0;background:transparent;border:0;}
+  .markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:var(--border);border:0;}
+  .markdown-body table{display:block;width:max-content;max-width:100%;overflow:auto;
+    border-spacing:0;border-collapse:collapse;margin-bottom:16px;}
+  .markdown-body table th,.markdown-body table td{padding:6px 13px;border:1px solid var(--border);}
+  .markdown-body table th{font-weight:600;background-color:var(--bg-subtle);}
+  .markdown-body table tr:nth-child(2n){background-color:rgba(110,118,129,.1);}
+  .markdown-body blockquote{padding:0 1em;color:var(--fg-muted);border-left:.25em solid var(--border);margin:0 0 16px;}
+  .markdown-body ul,.markdown-body ol{padding-left:2em;margin-top:0;margin-bottom:16px;}
+  .markdown-body li+li{margin-top:.25em;}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="banner">
+    <h1>Local preview &mdash; XILI-AI org profile</h1>
+    <p>Source: <code>profile/README.md</code> &nbsp;&middot;&nbsp; hover the project cards to rotate them in 3D, hover the contributor bars to lift them.</p>
+  </div>
+  <article class="markdown-body">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen&family=VT323&family=Noto+Sans+SC:wght@400;700&display=swap');
+
+:root{
+  --xl-blue:#3a6ed8;
+  --xl-blue2:#5b9bd5;
+  --xl-cyan:#5fd3f3;
+  --xl-deep:#0b1b3a;
+  --xl-ink:#060b18;
+  --xl-glow:#4ea8ff;
+  --xl-violet:#7c5cff;
+  --xl-pix:'Press Start 2P','Silkscreen','Courier New',monospace;
+  --xl-mono:'VT323','Consolas','Courier New',monospace;
+  --xl-body:'Noto Sans SC','Segoe UI','Microsoft YaHei',sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .xl-float,.xl-blink,.xl-type,.xl-badge,.xl-chip,.xl-repo,.xl-cpu-tilt,.xl-cpu-glow,.xl-cpu-top::after,.xl-cpu-face,.xl-cpu-wave,.xl-spark,.xl-cpu-die::before,.xl-cpu-die::after,.xl-cpu-die img{animation:none !important;transition:none !important;}
+}
+
+.markdown-body{color:#c9dcff;font-family:var(--xl-body);}
+.markdown-body h1,.markdown-body h2,.markdown-body h3{font-family:var(--xl-pix);color:#fff;letter-spacing:1px;}
+
+/* ============ 像素标题 ============ */
+.xl-head{
+  display:inline-block;padding:12px 28px;margin:28px 0 18px;
+  font-family:var(--xl-pix);font-size:19px;line-height:1.6;color:#fff;
+  background:linear-gradient(180deg,#5b9bd5 0%,#2f60c4 48%,#1d3f8f 52%,#16307a 100%);
+  border:3px solid #0b1b3a;border-radius:8px;
+  text-shadow:0 3px 0 #0b1b3a,0 0 22px rgba(95,211,243,.65);
+  box-shadow:0 6px 0 #0b1b3a,0 12px 30px rgba(0,0,0,.55);
+}
+.xl-sub{
+  display:block;margin:-8px 0 22px;
+  font-family:var(--xl-mono);font-size:22px;letter-spacing:2px;color:var(--xl-cyan);
+  text-shadow:0 0 14px rgba(95,211,243,.5);
+}
+.xl-divider{
+  display:block;height:14px;margin:26px 0;
+  background:
+    linear-gradient(90deg,transparent 0%,rgba(95,211,243,0) 0%,#1b3766 0%,#1b3766 100%),
+    repeating-linear-gradient(90deg,#0b1b3a 0 10px,#2f60c4 10px 20px,#5fd3f3 20px 26px,#2f60c4 26px 36px);
+  background-repeat:no-repeat,repeat-x;
+  background-size:100% 100%,100% 6px;
+  background-position:center,center;
+  border-radius:3px;opacity:.85;
+}
+
+/* ============ 浮动机器人 ============ */
+.xl-float{
+  animation:xl-float 4.2s ease-in-out infinite;
+  filter:drop-shadow(0 14px 22px rgba(0,0,0,.6)) drop-shadow(0 0 18px rgba(78,168,255,.35));
+}
+@keyframes xl-float{
+  0%,100%{transform:translateY(0) rotate(-1.5deg);}
+  50%{transform:translateY(-16px) rotate(1.5deg);}
+}
+
+/* ============ 打字机（自研，无第三方服务） ============ */
+.xl-typewrap{display:flex;justify-content:center;height:46px;overflow:hidden;}
+.xl-type{
+  display:inline-block;white-space:nowrap;overflow:hidden;vertical-align:bottom;
+  font-family:var(--xl-mono);font-size:32px;letter-spacing:1px;color:var(--xl-cyan);
+  text-shadow:0 0 16px rgba(95,211,243,.55);
+  width:0;border-right:3px solid var(--xl-cyan);
+  animation:xl-type 16s steps(37,end) infinite,xl-caret-blink 1s step-end infinite;
+}
+@keyframes xl-type{0%{width:0;}42%{width:37ch;}82%{width:37ch;}100%{width:0;}}
+@keyframes xl-caret-blink{0%,100%{border-right-color:var(--xl-cyan);}50%{border-right-color:transparent;}}
+.xl-tagline{
+  display:block;text-align:center;font-family:var(--xl-mono);font-size:24px;
+  letter-spacing:3px;color:#8fb3e8;margin-top:-2px;
+}
+
+/* ============ 徽章 ============ */
+.xl-badge{
+  display:inline-block;padding:6px 14px;margin:5px;
+  font-family:var(--xl-mono);font-size:20px;letter-spacing:1px;color:#cfe8ff;
+  background:linear-gradient(180deg,#16295a,#0a1730);
+  border:2px solid #2f60c4;border-radius:6px;
+  box-shadow:0 4px 0 #060b18,inset 0 0 12px rgba(95,211,243,.22);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.xl-badge:hover{transform:translateY(-4px);border-color:var(--xl-cyan);box-shadow:0 8px 0 #060b18,0 0 22px rgba(95,211,243,.5);}
+.xl-badge-link{text-decoration:none;}
+
+/* ============ 终端窗口 ============ */
+.xl-term{
+  max-width:780px;margin:0 auto;text-align:left;
+  background:linear-gradient(180deg,#0d1a33 0%,#08111f 100%);
+  border:2px solid #2a4d8f;border-radius:12px;overflow:hidden;
+  box-shadow:0 20px 44px rgba(0,0,0,.6),inset 0 0 60px rgba(58,110,216,.16);
+}
+.xl-term-bar{
+  display:flex;align-items:center;gap:8px;padding:10px 14px;
+  background:#0a1428;border-bottom:1px solid #22386b;position:relative;
+}
+.xl-term-bar::after{
+  content:'xili-ai — zsh';position:absolute;right:14px;
+  font-family:var(--xl-mono);font-size:16px;color:#4a6a9e;
+}
+.xl-dot{width:12px;height:12px;border-radius:50%;display:inline-block;}
+.xl-term-body{
+  padding:16px 18px;font-family:var(--xl-mono);font-size:19px;line-height:1.65;color:#9fd6ff;
+}
+.xl-cmd{color:var(--xl-cyan);}
+.xl-key{color:#c08cff;}
+.xl-val{color:#7ef2a8;}
+.xl-caret{
+  display:inline-block;width:9px;height:15px;background:var(--xl-cyan);
+  vertical-align:-2px;margin-left:3px;animation:xl-blink 1.05s steps(1) infinite;
+}
+@keyframes xl-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+/* ============ 3D CPU 芯片（自研，纯 CSS） ============ */
+.xl-chip-stage{
+  --cw:240px;--ct:26px;
+  position:relative;display:flex;justify-content:center;align-items:center;
+  perspective:1200px;padding:64px 0 58px;min-height:390px;
+}
+.xl-cpu-glow{
+  position:absolute;left:50%;top:50%;width:470px;height:470px;border-radius:50%;
+  pointer-events:none;
+  background:radial-gradient(circle,rgba(95,211,243,.26) 0%,rgba(58,110,216,.14) 42%,rgba(0,0,0,0) 70%);
+  filter:blur(26px);
+  animation:xl-cpu-glow 3.6s ease-in-out infinite;
+}
+@keyframes xl-cpu-glow{
+  0%,100%{opacity:.42;transform:translate(-50%,-50%) scale(.9);}
+  50%{opacity:1;transform:translate(-50%,-50%) scale(1.08);}
+}
+.xl-cpu-tilt{
+  position:relative;width:var(--cw);height:var(--cw);transform-style:preserve-3d;
+  animation:xl-cpu-float 10s ease-in-out infinite;
+}
+@keyframes xl-cpu-float{
+  0%,100%{transform:rotateX(34deg) rotateZ(-14deg);}
+  50%{transform:rotateX(27deg) rotateZ(-5deg) translateZ(16px);}
+}
+.xl-cpu{position:relative;width:var(--cw);height:var(--cw);transform-style:preserve-3d;}
+
+/* 顶面 = 芯片封装基板 */
+.xl-cpu-top{
+  position:absolute;inset:0;transform:translateZ(var(--ct));
+  background:linear-gradient(140deg,#24395f 0%,#10203e 52%,#0a1428 100%);
+  border:2px solid #3d5c96;border-radius:7px;
+  box-shadow:inset 0 0 40px rgba(95,211,243,.16);
+}
+.xl-cpu-top::after{
+  content:'';position:absolute;inset:0;border-radius:5px;pointer-events:none;
+  mix-blend-mode:screen;
+  background:linear-gradient(140deg,rgba(190,248,255,.42),rgba(124,92,255,.26));
+  animation:xl-face-pulse 3.6s ease-in-out infinite;
+}
+@keyframes xl-face-pulse{0%,100%{opacity:.10;}50%{opacity:.62;}}
+
+/* 侧壁 */
+.xl-cpu-face{position:absolute;animation:xl-face-bright 3.6s ease-in-out infinite;}
+@keyframes xl-face-bright{0%,100%{filter:brightness(.66);}50%{filter:brightness(1.55);}}
+.xl-cpu-front{
+  left:0;top:var(--cw);width:var(--cw);height:var(--ct);
+  transform-origin:top center;transform:translateZ(var(--ct)) rotateX(-90deg);
+  background:linear-gradient(180deg,#2a4a80,#0a1428);
+  border:1px solid #3a5b93;border-top:none;
+}
+.xl-cpu-right{
+  left:var(--cw);top:0;width:var(--ct);height:var(--cw);
+  transform-origin:left center;transform:translateZ(var(--ct)) rotateY(90deg);
+  background:linear-gradient(90deg,#1d3358,#0a1428);
+  border:1px solid #2f4d80;border-left:none;
+}
+
+/* 引脚 */
+.xl-cpu-pins{
+  position:absolute;opacity:.9;
+  background-image:repeating-linear-gradient(90deg,#e8c96a 0 7px,rgba(232,201,106,0) 7px 16px);
+  filter:drop-shadow(0 0 4px rgba(232,201,106,.35));
+}
+.xl-cpu-pins.pt{left:14px;right:14px;top:-13px;height:11px;}
+.xl-cpu-pins.pb{left:14px;right:14px;bottom:-13px;height:11px;}
+.xl-cpu-pins.pl{top:14px;bottom:14px;left:-13px;width:11px;
+  background-image:repeating-linear-gradient(0deg,#e8c96a 0 7px,rgba(232,201,106,0) 7px 16px);}
+.xl-cpu-pins.pr{top:14px;bottom:14px;right:-13px;width:11px;
+  background-image:repeating-linear-gradient(0deg,#e8c96a 0 7px,rgba(232,201,106,0) 7px 16px);}
+
+/* 裸片（die） */
+.xl-cpu-die{
+  position:absolute;inset:20px 20px 54px;border-radius:4px;overflow:hidden;
+  background:
+    repeating-linear-gradient(0deg,rgba(95,211,243,.09) 0 1px,rgba(0,0,0,0) 1px 13px),
+    repeating-linear-gradient(90deg,rgba(95,211,243,.09) 0 1px,rgba(0,0,0,0) 1px 13px),
+    radial-gradient(circle at 46% 40%,rgba(58,140,216,.45),rgba(5,10,22,.94) 74%);
+  border:1px solid rgba(95,211,243,.5);
+  box-shadow:inset 0 0 36px rgba(95,211,243,.32);
+}
+/* 电流：两道流动的光带 */
+.xl-cpu-die::before{
+  content:'';position:absolute;inset:-60%;pointer-events:none;
+  background:linear-gradient(104deg,rgba(0,0,0,0) 44%,rgba(190,248,255,.55) 50%,rgba(0,0,0,0) 56%);
+  animation:xl-current 3.6s linear infinite;
+}
+.xl-cpu-die::after{
+  content:'';position:absolute;inset:-60%;pointer-events:none;
+  background:linear-gradient(104deg,rgba(0,0,0,0) 28%,rgba(124,92,255,.45) 34%,rgba(0,0,0,0) 40%);
+  animation:xl-current 3.6s linear infinite;
+}
+@keyframes xl-current{
+  0%{transform:translate(-40%,-40%);}
+  100%{transform:translate(40%,40%);}
+}
+/* 核心：我们的像素机器人 */
+.xl-cpu-die img{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:100px;image-rendering:pixelated;
+  animation:xl-die-core 3.6s ease-in-out infinite;
+}
+@keyframes xl-die-core{
+  0%,100%{opacity:.7;filter:drop-shadow(0 0 8px rgba(95,211,243,.45));}
+  50%{opacity:1;filter:drop-shadow(0 0 18px rgba(190,248,255,.95)) drop-shadow(0 0 44px rgba(78,168,255,.6));}
+}
+/* 电流粒子 */
+.xl-spark{
+  position:absolute;left:var(--x);top:var(--y);width:5px;height:5px;border-radius:50%;
+  background:#e8fdff;box-shadow:0 0 9px 2px rgba(95,211,243,.95);opacity:0;
+  animation:xl-spark 3.6s linear infinite;animation-delay:calc(var(--i) * -0.42s);
+}
+@keyframes xl-spark{
+  0%{opacity:0;transform:translate(0,0) scale(.4);}
+  10%{opacity:1;}
+  55%{opacity:1;transform:translate(var(--dx),var(--dy)) scale(1);}
+  90%{opacity:.65;transform:translate(calc(var(--dx) * 1.35),calc(var(--dy) * 1.35)) scale(.85);}
+  100%{opacity:0;transform:translate(calc(var(--dx) * 1.6),calc(var(--dy) * 1.6)) scale(.5);}
+}
+/* 印在封装上的 logo */
+.xl-cpu-mark{
+  position:absolute;left:50%;bottom:15px;transform:translateX(-50%);width:130px;
+  opacity:1;filter:drop-shadow(0 0 8px rgba(95,211,243,.9)) drop-shadow(0 0 22px rgba(78,168,255,.6));
+}
+/* 每次脉冲向外扩散的能量环 */
+.xl-cpu-wave{
+  position:absolute;left:50%;top:50%;width:var(--cw);height:var(--cw);
+  border:2px solid rgba(95,211,243,.7);border-radius:9px;pointer-events:none;
+  animation:xl-wave 3.6s ease-out infinite;
+}
+@keyframes xl-wave{
+  0%{opacity:.5;transform:translate(-50%,-50%) scale(1);}
+  68%{opacity:0;transform:translate(-50%,-50%) scale(1.85);}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(1.85);}
+}
+
+/* ============ 3D 翻转卡片（项目） ============ */
+.xl-cards{
+  display:flex;justify-content:center;align-items:stretch;gap:28px;flex-wrap:wrap;
+  perspective:1500px;margin:8px 0 10px;
+}
+.xl-card{flex:1 1 320px;max-width:470px;height:300px;perspective:1200px;}
+.xl-card-inner{
+  position:relative;width:100%;height:100%;transform-style:preserve-3d;
+  transition:transform .95s cubic-bezier(.22,.85,.25,1);
+}
+.xl-card:hover .xl-card-inner{transform:rotateY(180deg);}
+.xl-face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border-radius:16px;padding:20px;text-align:left;
+  background:linear-gradient(160deg,#15295b 0%,#0a1730 100%);
+  border:2px solid #2f60c4;
+  box-shadow:0 14px 32px rgba(0,0,0,.55),inset 0 0 34px rgba(78,168,255,.14);
+}
+.xl-back{transform:rotateY(180deg);background:linear-gradient(160deg,#0e2246 0%,#07101f 100%);border-color:var(--xl-violet);}
+.xl-front{transform:rotateY(0deg);}
+.xl-card-title{font-family:var(--xl-pix);font-size:14px;color:#fff;line-height:1.7;margin:0 0 12px;word-break:break-word;}
+.xl-card-desc{font-family:var(--xl-body);font-size:13.5px;color:#a9c7f5;line-height:1.75;margin:0;}
+.xl-lock{
+  display:inline-block;margin-bottom:12px;padding:3px 10px;border-radius:20px;
+  font-family:var(--xl-mono);font-size:16px;color:#ffd479;
+  background:rgba(255,196,61,.12);border:1px solid rgba(255,196,61,.45);
+}
+.xl-chip{
+  display:inline-block;padding:3px 9px;margin:4px 4px 0 0;border-radius:5px;
+  font-family:var(--xl-mono);font-size:16px;color:#bfe6ff;
+  background:rgba(95,211,243,.1);border:1px solid rgba(95,211,243,.35);
+  transition:transform .2s ease,background .2s ease;
+}
+.xl-chip:hover{transform:translateY(-3px) scale(1.06);background:rgba(95,211,243,.24);}
+
+/* ============ 整幅横幅（长方形，铺满横跨） ============ */
+.xl-wide{
+  display:flex;align-items:center;gap:26px;flex-wrap:wrap;
+  max-width:1000px;margin:22px auto 0;padding:22px 28px;border-radius:16px;
+  background:linear-gradient(115deg,#15295b 0%,#0a1428 62%,#121a38 100%);
+  border:2px dashed #2f60c4;
+  box-shadow:0 12px 28px rgba(0,0,0,.5);
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.xl-wide:hover{
+  transform:translateY(-6px);border-style:solid;border-color:var(--xl-cyan);
+  box-shadow:0 18px 34px rgba(0,0,0,.55),0 0 26px rgba(95,211,243,.3);
+}
+.xl-wide-main{flex:1 1 320px;min-width:0;}
+.xl-wide-title{font-family:var(--xl-pix);font-size:13px;color:#fff;margin:0 0 10px;line-height:1.7;}
+.xl-wide-desc{font-size:14px;color:#a9c7f5;margin:0;line-height:1.8;}
+.xl-wide-chips{flex:1 1 280px;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.xl-wide-chips .xl-chip{margin:0;}
+
+/* ============ 通用卡片 ============ */
+.xl-grid{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:14px 0;}
+.xl-mini{
+  flex:1 1 250px;max-width:300px;text-align:left;padding:18px;border-radius:14px;
+  background:linear-gradient(160deg,#132449 0%,#0a1428 100%);
+  border:2px solid #24467f;box-shadow:0 10px 24px rgba(0,0,0,.45);
+  transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;
+}
+.xl-mini:hover{
+  transform:translateY(-8px) rotateX(6deg);border-color:var(--xl-cyan);
+  box-shadow:0 18px 34px rgba(0,0,0,.55),0 0 26px rgba(95,211,243,.32);
+}
+.xl-mini h3{font-size:13px;margin:0 0 10px;}
+.xl-mini p{font-size:14px;color:#a9c7f5;margin:0;line-height:1.75;}
+
+/* ============ 生成的仓库卡片 ============ */
+.xl-repos{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin:18px 0;perspective:1300px;}
+.xl-repo{
+  flex:1 1 300px;max-width:360px;padding:16px 18px;border-radius:14px;text-align:left;
+  background:linear-gradient(160deg,#132449 0%,#0a1428 100%);
+  border:2px solid #24467f;box-shadow:0 10px 24px rgba(0,0,0,.5);
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .3s ease;
+}
+.xl-repo:hover{
+  transform:rotateY(12deg) translateY(-6px);border-color:var(--xl-cyan);
+  box-shadow:0 18px 32px rgba(0,0,0,.55),0 0 26px rgba(95,211,243,.3);
+}
+.xl-repo-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.xl-repo-name{font-family:var(--xl-pix);font-size:12px;color:#fff;line-height:1.6;word-break:break-word;}
+.xl-repo-desc{font-size:13px;color:#a9c7f5;line-height:1.7;margin:0 0 12px;min-height:22px;}
+.xl-repo-stats{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px;}
+.xl-metric{font-family:var(--xl-mono);font-size:17px;color:#7f9fd4;}
+.xl-metric b{color:#fff;font-weight:400;}
+.xl-repo-bar{height:8px;border-radius:4px;background:#0b1b3a;overflow:hidden;box-shadow:inset 0 1px 3px rgba(0,0,0,.7);margin-bottom:8px;}
+.xl-repo-bar i{display:block;height:100%;width:var(--w);background:linear-gradient(90deg,#3a6ed8,#5fd3f3);border-radius:4px;}
+.xl-repo-foot{font-family:var(--xl-mono);font-size:16px;color:#6d8ec2;display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+.xl-dotsep{opacity:.5;}
+
+/* ============ 语言分布（3D 条） ============ */
+.xl-langlist{max-width:780px;margin:18px auto;display:flex;flex-direction:column;gap:10px;}
+.xl-langrow{display:grid;grid-template-columns:110px 1fr 62px;align-items:center;gap:12px;}
+.xl-langname{font-family:var(--xl-mono);font-size:18px;color:#cfe8ff;text-align:right;}
+.xl-langtrack{
+  height:16px;border-radius:5px;background:#0b1b3a;position:relative;overflow:hidden;
+  box-shadow:inset 0 2px 5px rgba(0,0,0,.75),0 1px 0 rgba(95,211,243,.12);
+}
+.xl-langtrack i{
+  position:absolute;left:0;top:0;bottom:0;width:var(--w);border-radius:5px;
+  background:linear-gradient(180deg,#8fe3ff 0%,#3a6ed8 48%,#24467f 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 0 12px rgba(95,211,243,.45);
+}
+.xl-langpct{font-family:var(--xl-mono);font-size:17px;color:#7f9fd4;}
+
+/* ============ 3D 贡献者柱状图 ============ */
+.xl-chart{margin:18px 0 8px;}
+.xl-chart-head{display:flex;justify-content:center;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px;}
+.xl-chart-title{font-family:var(--xl-pix);font-size:12px;color:#fff;}
+.xl-chart-sub{font-family:var(--xl-mono);font-size:18px;color:#6d8ec2;}
+.xl-chart-scene{
+  position:relative;display:flex;align-items:flex-end;justify-content:center;gap:16px;
+  height:230px;padding:34px 0 0;perspective:1100px;transform-style:preserve-3d;
+  transform:rotateX(-8deg);
+}
+.xl-chart-floor{
+  position:absolute;left:-8%;right:-8%;top:100%;height:320px;pointer-events:none;
+  transform-origin:top center;transform:rotateX(-90deg);
+  background:
+    repeating-linear-gradient(90deg,rgba(95,211,243,.22) 0 1px,transparent 1px 36px),
+    repeating-linear-gradient(0deg,rgba(95,211,243,.22) 0 1px,transparent 1px 36px);
+}
+.xl-bar{
+  position:relative;flex:0 0 54px;width:54px;height:var(--h);transform-style:preserve-3d;
+  transition:transform .3s ease;
+}
+.xl-bar:hover{transform:translateY(-10px);}
+.xl-bar-front{
+  position:absolute;inset:0;border-radius:4px 4px 0 0;
+  background:linear-gradient(180deg,#5fd3f3 0%,#3a6ed8 55%,#24467f 100%);
+  border:2px solid #0b1b3a;box-shadow:inset 0 0 20px rgba(255,255,255,.14);
+}
+.xl-bar-cap{
+  position:absolute;left:-2px;right:-2px;top:0;height:18px;
+  transform-origin:top center;transform:rotateX(-90deg);
+  background:#9fe9ff;border:2px solid #0b1b3a;border-radius:4px;
+}
+.xl-bar-side{
+  position:absolute;top:0;right:0;width:18px;height:100%;
+  transform-origin:right center;transform:rotateY(-90deg);
+  background:#2b4f9e;border:2px solid #0b1b3a;
+}
+.xl-bar-value{
+  position:absolute;top:-26px;left:-14px;right:-14px;text-align:center;
+  font-family:var(--xl-mono);font-size:18px;color:#eaf7ff;text-shadow:0 1px 3px rgba(0,0,0,.85);
+}
+.xl-bar-zero .xl-bar-front{background:linear-gradient(180deg,#2b4577,#16264a);}
+.xl-bar-zero .xl-bar-value{display:none;}
+.xl-chart-labels{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:16px;}
+.xl-label{flex:0 0 54px;width:54px;text-align:center;font-family:var(--xl-mono);font-size:14px;color:#8fb3e8;}
+.xl-label-ava{width:30px;height:30px;border-radius:8px;border:2px solid #2f60c4;box-shadow:0 4px 10px rgba(0,0,0,.5);}
+.xl-label-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;}
+.xl-label-num{display:block;color:#fff;font-size:16px;}
+
+.xl-empty{font-family:var(--xl-mono);font-size:19px;color:#6d8ec2;text-align:center;}
+.xl-dotsep{opacity:.5;}
+.xl-center{text-align:center;}
+.xl-quote{
+  border-left:4px solid var(--xl-cyan);margin:18px auto;max-width:760px;padding:10px 18px;
+  background:rgba(95,211,243,.06);border-radius:0 10px 10px 0;
+  font-family:var(--xl-body);color:#bcd6fb;
+}
+.xl-link{color:#8fe6ff;text-decoration:none;border-bottom:1px dashed rgba(143,230,255,.5);}
+.xl-link:hover{color:var(--xl-cyan);border-bottom-color:var(--xl-cyan);}
+.markdown-body code{background:rgba(95,211,243,.12);color:#8fe6ff;padding:2px 6px;border-radius:4px;font-family:var(--xl-mono);font-size:16px;}
+</style><div align="center"><img src="file:///E:\Projects\Other\XiliProfile\.github/assets/image/logo.png" width="430" alt="XILI-AI" /><br><img class="xl-float" src="file:///E:\Projects\Other\XiliProfile\.github/assets/image/3D.png" width="160" alt="XILI-AI Pixel Robot" /><br><div class="xl-typewrap"><span class="xl-type">Visual Intelligence + LLM Applications</span></div>
+<span class="xl-tagline">视觉智能 · 大模型应用 · 让算法真正落地到产线</span><br><p>
+<!-- xili:meta:begin -->
+<span class="xl-badge">👥 3 Followers</span>
+<span class="xl-badge">📦 2 Repos</span>
+<span class="xl-badge">🔒 2 Private</span>
+<span class="xl-badge">⚡ 4 Members</span>
+<span class="xl-badge">📅 Since 2026</span>
+<!-- xili:meta:end -->
+<span class="xl-badge">📍 Suzhou · China</span>
+<span class="xl-badge">🟢 Active</span>
+</p></div><p><span class="xl-divider"></span></p>
+<div class="xl-center"><p><span class="xl-head">ABOUT US</span>
+<span class="xl-sub">苏州矽励科技有限公司 · XILI-AI</span></p>
+</div><div class="xl-term">
+  <div class="xl-term-bar">
+    <span class="xl-dot" style="background:#ff5f57"></span>
+    <span class="xl-dot" style="background:#febc2e"></span>
+    <span class="xl-dot" style="background:#28c840"></span>
+  </div>
+  <div class="xl-term-body">
+    <div><span class="xl-cmd">➜</span> <span class="xl-key">whoami</span> — 苏州矽励科技有限公司</div>
+    <div><span class="xl-cmd">➜</span> <span class="xl-key">focus</span> — <span class="xl-val">视觉领域 + 大模型应用</span></div>
+    <div><span class="xl-cmd">➜</span> <span class="xl-key">domain</span> — <span class="xl-val">半导体与电子制造 · 质量工程</span></div>
+    <div><span class="xl-cmd">➜</span> <span class="xl-key">core</span> — LLM · 知识图谱 · 向量检索 · 计算机视觉<span class="xl-caret"></span></div>
+  </div>
+</div><div class="xl-quote">
+  <b>我们是谁</b>　苏州矽励科技有限公司（Silicon Insight Technology）是一家专注 <b>视觉智能</b> 与 <b>大模型应用</b> 的技术团队。我们把计算机视觉的前沿能力与大语言模型的推理能力相结合，用工程化方法把它们沉淀为可交付、可落地的产品系统。
+</div><div class="xl-grid">
+  <div class="xl-mini">
+    <h3>👁 视觉智能</h3>
+    <p>图像 / 视频理解、目标检测与分割、OCR、视觉大模型微调与评测，服务真实场景下的感知与标注需求。</p>
+  </div>
+  <div class="xl-mini">
+    <h3>🧠 大模型应用</h3>
+    <p>以 RAG 为核心的知识库工程、实体与关系抽取、智能体编排、模型微调与推理加速，把模型能力转化为业务生产力。</p>
+  </div>
+  <div class="xl-mini">
+    <h3>⚙ 工程交付</h3>
+    <p>从数据治理、标注流水线到服务端架构与可观测性，交付稳定、可维护、可扩展的端到端系统。</p>
+  </div>
+</div><p><span class="xl-divider"></span></p>
+<div class="xl-center"><p><span class="xl-head">PROJECTS</span></p>
+</div><div class="xl-cards">  <div class="xl-card">
+    <div class="xl-card-inner">
+      <div class="xl-face xl-front">
+        <span class="xl-lock">🔒 PRIVATE</span>
+        <h3 class="xl-card-title">Xili-ReportRAG</h3>
+        <p class="xl-card-desc">质量部知识库管理系统。基于 <b>LLM + 向量检索 + 知识图谱</b>，面向半导体与电子制造行业，从 8D 质量报告中抽取实体与关系，构建可查询的知识图谱，支持混合检索、以文/以图搜图、RAG 流式问答、AI 根因推理与 8D 报告生成。</p>
+      </div>
+      <div class="xl-face xl-back">
+        <h3 class="xl-card-title" style="font-size:12px;">STACK</h3>
+        <div>
+          <span class="xl-chip">Python</span>
+          <span class="xl-chip">Flask</span>
+          <span class="xl-chip">SQLAlchemy</span>
+          <span class="xl-chip">MySQL</span>
+          <span class="xl-chip">Qdrant</span>
+          <span class="xl-chip">Neo4j</span>
+          <span class="xl-chip">Qwen3-VL-Embedding</span>
+          <span class="xl-chip">MinerU</span>
+          <span class="xl-chip">Vue 3</span>
+          <span class="xl-chip">TypeScript</span>
+          <span class="xl-chip">Naive UI</span>
+          <span class="xl-chip">ECharts</span>
+          <span class="xl-chip">uv</span>
+          <span class="xl-chip">Docker</span>
+        </div>
+        <p class="xl-card-desc" style="margin-top:14px;">闭源仓库，仅组织成员可访问。</p>
+      </div>
+    </div>
+  </div>  <div class="xl-card">
+    <div class="xl-card-inner">
+      <div class="xl-face xl-front">
+        <span class="xl-lock">🔒 PRIVATE</span>
+        <h3 class="xl-card-title">AutoLabel</h3>
+        <p class="xl-card-desc">桌面端自动标注 / 模型训练工具。基于 <b>tkinter + ultralytics YOLO</b>，覆盖预训练权重加载、数据集准备、自动标注、模型训练与训练曲线查看的完整闭环，配套 Labelme 标注与数据集切分规范。</p>
+      </div>
+      <div class="xl-face xl-back">
+        <h3 class="xl-card-title" style="font-size:12px;">STACK</h3>
+        <div>
+          <span class="xl-chip">Python</span>
+          <span class="xl-chip">tkinter</span>
+          <span class="xl-chip">ultralytics YOLO</span>
+          <span class="xl-chip">PyTorch</span>
+          <span class="xl-chip">OpenCV</span>
+          <span class="xl-chip">scikit-learn</span>
+          <span class="xl-chip">TensorBoard</span>
+          <span class="xl-chip">Labelme</span>
+          <span class="xl-chip">numpy / pandas</span>
+          <span class="xl-chip">uv</span>
+        </div>
+        <p class="xl-card-desc" style="margin-top:14px;">闭源仓库，仅组织成员可访问。</p>
+      </div>
+    </div>
+  </div></div><div class="xl-wide">
+  <div class="xl-wide-main">
+    <span class="xl-lock">🚧 IN PROGRESS</span>
+    <h3 class="xl-wide-title">MORE IN THE PIPELINE</h3>
+    <p class="xl-wide-desc">更多项目正在孵化中：多模态评测、视觉 Agent、模型服务化与数据资产平台。</p>
+  </div>
+  <div class="xl-wide-chips">
+    <span class="xl-chip">Multimodal Eval</span>
+    <span class="xl-chip">Vision Agent</span>
+    <span class="xl-chip">LLM Serving</span>
+    <span class="xl-chip">Data Platform</span>
+  </div>
+</div><p><span class="xl-divider"></span></p>
+<div class="xl-center"><p><span class="xl-head">TECH STACK</span></p>
+</div><div class="xl-chip-stage">
+  <div class="xl-cpu-glow"></div>
+  <div class="xl-cpu-tilt">
+    <div class="xl-cpu">
+      <div class="xl-cpu-wave"></div>
+      <div class="xl-cpu-top">
+        <div class="xl-cpu-pins pt"></div>
+        <div class="xl-cpu-pins pb"></div>
+        <div class="xl-cpu-pins pl"></div>
+        <div class="xl-cpu-pins pr"></div>
+        <div class="xl-cpu-die">
+          <img src="file:///E:\Projects\Other\XiliProfile\.github/assets/image/3D.png" alt="" />
+          <span class="xl-spark" style="--x:10%;--y:20%;--dx:88px;--dy:26px;--i:0"></span>
+          <span class="xl-spark" style="--x:78%;--y:16%;--dx:-94px;--dy:34px;--i:1"></span>
+          <span class="xl-spark" style="--x:14%;--y:74%;--dx:102px;--dy:-30px;--i:2"></span>
+          <span class="xl-spark" style="--x:70%;--y:80%;--dx:-86px;--dy:-38px;--i:3"></span>
+          <span class="xl-spark" style="--x:44%;--y:12%;--dx:26px;--dy:112px;--i:4"></span>
+          <span class="xl-spark" style="--x:28%;--y:52%;--dx:118px;--dy:8px;--i:5"></span>
+          <span class="xl-spark" style="--x:60%;--y:44%;--dx:-116px;--dy:-16px;--i:6"></span>
+          <span class="xl-spark" style="--x:88%;--y:60%;--dx:22px;--dy:74px;--i:7"></span>
+        </div>
+        <img class="xl-cpu-mark" src="file:///E:\Projects\Other\XiliProfile\.github/assets/image/logo.png" alt="XILI-AI" />
+      </div>
+      <div class="xl-cpu-face xl-cpu-front"></div>
+      <div class="xl-cpu-face xl-cpu-right"></div>
+    </div>
+  </div>
+</div><div class="xl-center">
+  <span class="xl-badge">Python 3.10+</span>
+  <span class="xl-badge">Flask / FastAPI</span>
+  <span class="xl-badge">SQLAlchemy</span>
+  <span class="xl-badge">MySQL</span>
+  <span class="xl-badge">Qdrant</span>
+  <span class="xl-badge">Neo4j</span>
+  <span class="xl-badge">LLM / RAG</span>
+  <span class="xl-badge">Qwen3-VL-Embedding</span>
+  <span class="xl-badge">MinerU</span>
+  <span class="xl-badge">PyTorch</span>
+  <span class="xl-badge">YOLO / OpenCV</span>
+  <span class="xl-badge">Vue 3 + TypeScript</span>
+  <span class="xl-badge">Naive UI / ECharts</span>
+  <span class="xl-badge">tkinter</span>
+  <span class="xl-badge">uv</span>
+  <span class="xl-badge">Docker / Gunicorn</span>
+</div><p><span class="xl-divider"></span></p>
+<div class="xl-center"><p><span class="xl-head">STATS</span></p>
+</div><div class="xl-repos">
+<!-- xili:repos:begin -->  <div class="xl-repo">
+    <div class="xl-repo-top">
+      <span class="xl-repo-vis" title="private">🔒</span>
+      <span class="xl-repo-name" title="Xili-AI/Xili-ReportRAG">Xili-ReportRAG</span>
+    </div>
+    <p class="xl-repo-desc">质量部知识库管理系统：LLM + 向量检索 + 知识图谱的 8D 质量报告知识库</p>
+    <div class="xl-repo-stats">
+      <span class="xl-metric"><b>120</b> commits</span>
+      <span class="xl-metric"><b>0</b> ★</span>
+      <span class="xl-metric"><b>0</b> ⑂</span>
+      <span class="xl-metric"><b>670.6 MB</b> size</span>
+    </div>
+    <div class="xl-repo-bar"><i style="--w:100%"></i></div>
+    <div class="xl-repo-foot"><span class="xl-repo-langname">Python</span><span class="xl-dotsep">·</span>6d ago</div>
+  </div>  <div class="xl-repo">
+    <div class="xl-repo-top">
+      <span class="xl-repo-vis" title="private">🔒</span>
+      <span class="xl-repo-name" title="Xili-AI/AutoLabel">AutoLabel</span>
+    </div>
+    <p class="xl-repo-desc">基于 tkinter + ultralytics YOLO 的桌面端自动标注 / 模型训练工具</p>
+    <div class="xl-repo-stats">
+      <span class="xl-metric"><b>1</b> commits</span>
+      <span class="xl-metric"><b>0</b> ★</span>
+      <span class="xl-metric"><b>0</b> ⑂</span>
+      <span class="xl-metric"><b>218 KB</b> size</span>
+    </div>
+    <div class="xl-repo-bar"><i style="--w:3%"></i></div>
+    <div class="xl-repo-foot"><span class="xl-repo-langname">Python</span><span class="xl-dotsep">·</span>23d ago</div>
+  </div>
+<!-- xili:repos:end -->
+</div><div class="xl-langlist">
+<!-- xili:languages:begin -->  <div class="xl-langrow">
+    <span class="xl-langname">Python</span>
+    <div class="xl-langtrack"><i style="--w:40.3%"></i></div>
+    <span class="xl-langpct">40.3%</span>
+  </div>  <div class="xl-langrow">
+    <span class="xl-langname">Vue</span>
+    <div class="xl-langtrack"><i style="--w:34.3%"></i></div>
+    <span class="xl-langpct">34.3%</span>
+  </div>  <div class="xl-langrow">
+    <span class="xl-langname">TypeScript</span>
+    <div class="xl-langtrack"><i style="--w:17.2%"></i></div>
+    <span class="xl-langpct">17.2%</span>
+  </div>  <div class="xl-langrow">
+    <span class="xl-langname">Markdown</span>
+    <div class="xl-langtrack"><i style="--w:8.1%"></i></div>
+    <span class="xl-langpct">8.1%</span>
+  </div>
+<!-- xili:languages:end -->
+</div><p><span class="xl-divider"></span></p>
+<div class="xl-center"><p><span class="xl-head">CONTRIBUTORS</span></p>
+</div><!-- xili:contributors:begin --><div class="xl-chart-head">
+  <span class="xl-chart-title">COMMITS BY MEMBER</span>
+  <span class="xl-chart-sub">4 member(s) · 121 commit(s) · 2 repo(s)</span>
+</div>
+<div class="xl-chart">
+  <div class="xl-chart-scene">
+    <div class="xl-chart-floor"></div>
+    <div class="xl-bar" style="--h:100%">
+      <span class="xl-bar-value">97</span>
+      <div class="xl-bar-front"></div>
+      <div class="xl-bar-cap"></div>
+      <div class="xl-bar-side"></div>
+    </div>
+    <div class="xl-bar" style="--h:13%">
+      <span class="xl-bar-value">13</span>
+      <div class="xl-bar-front"></div>
+      <div class="xl-bar-cap"></div>
+      <div class="xl-bar-side"></div>
+    </div>
+    <div class="xl-bar" style="--h:7%">
+      <span class="xl-bar-value">6</span>
+      <div class="xl-bar-front"></div>
+      <div class="xl-bar-cap"></div>
+      <div class="xl-bar-side"></div>
+    </div>
+    <div class="xl-bar" style="--h:7%">
+      <span class="xl-bar-value">5</span>
+      <div class="xl-bar-front"></div>
+      <div class="xl-bar-cap"></div>
+      <div class="xl-bar-side"></div>
+    </div>
+  </div>
+  <div class="xl-chart-labels">
+    <div class="xl-label" title="Tomsunzzzx · 97 commits · 2 repo(s)">
+      <img class="xl-label-ava" src="https://github.com/Tomsunzzzx.png" alt="" loading="lazy" />
+      <span class="xl-label-name">Tomsunzzzx</span>
+      <b class="xl-label-num">97</b>
+    </div>
+    <div class="xl-label" title="Xili-AI · 13 commits · 1 repo(s)">
+      <img class="xl-label-ava" src="https://github.com/Xili-AI.png" alt="" loading="lazy" />
+      <span class="xl-label-name">Xili-AI</span>
+      <b class="xl-label-num">13</b>
+    </div>
+    <div class="xl-label" title="RealTapeL · 6 commits · 1 repo(s)">
+      <img class="xl-label-ava" src="https://github.com/RealTapeL.png" alt="" loading="lazy" />
+      <span class="xl-label-name">RealTapeL</span>
+      <b class="xl-label-num">6</b>
+    </div>
+    <div class="xl-label" title="Ksing · 5 commits · 1 repo(s)">
+      <img class="xl-label-ava" src="https://github.com/Ksing.png" alt="" loading="lazy" />
+      <span class="xl-label-name">Ksing</span>
+      <b class="xl-label-num">5</b>
+    </div>
+  </div>
+</div>
+<!-- xili:contributors:end --><p><span class="xl-divider"></span></p>
+<div class="xl-center"><p><span class="xl-head">CONTACT</span>
+<span class="xl-sub">保持连接</span></p>
+</div><div class="xl-grid">
+  <div class="xl-mini">
+    <h3>👁 视觉算法</h3>
+    <p>检测 / 分割 / 视觉大模型，方向：多模态理解与模型评测。</p>
+  </div>
+  <div class="xl-mini">
+    <h3>🧠 大模型应用</h3>
+    <p>知识库工程 / RAG / 微调，方向：实体关系抽取与 Agent 编排。</p>
+  </div>
+  <div class="xl-mini">
+    <h3>🛠 全栈工程</h3>
+    <p>平台架构 / 数据管线，方向：向量库与图数据库工程化落地。</p>
+  </div>
+</div><p align="center">
+  <a class="xl-badge xl-badge-link" href="https://github.com/Xili-AI">GitHub</a>
+  <a class="xl-badge xl-badge-link" href="mailto:contact@xili-ai.com">Email</a>
+</p><p align="center" class="xl-mono" style="color:#8fb3e8;font-size:20px;">
+  Made with 🧠 by <a class="xl-link" href="https://github.com/Xili-AI">XILI-AI</a> · 苏州矽励科技有限公司
+</p>
+
+  </article>
+</div>
+</body>
+</html>
