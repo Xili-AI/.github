@@ -76,7 +76,7 @@
 
 合计 **121** 次提交，覆盖 **2** 个仓库。
 
-> 数据由 `Xili-AI/Xili-AI.github.io` 仓库中的 `tools/gen-stats.js` 直读 GitHub REST API 生成，覆盖闭源仓库。
+> 数据由 `Xili-AI/Xili-AI.github.io` 仓库的 `tools/gen-stats.js` 直读 GitHub REST API 生成，覆盖闭源仓库。
 
 ---
 
