@@ -35,12 +35,30 @@ const DRY = argv.includes('--dry-run');
 
 const log = (...a) => console.log('[stats]', ...a);
 
-function inject(src, key, html) {
-  const re = new RegExp(
-    `(<!-- xili:${key}:begin -->)[\\s\\S]*?(<!-- xili:${key}:end -->)`
-  );
-  if (!re.test(src)) throw new Error(`marker "xili:${key}" not found in profile/README.md`);
-  return src.replace(re, (_m, open, close) => `${open}\n${html}\n${close}`);
+/**
+ * The generated blocks are anchored to plain Markdown headings. Everything
+ * between a heading and the next heading (or horizontal rule) is replaced,
+ * so the README stays 100% basic Markdown - no angle-bracket tags, no
+ * scripts, no HTML.
+ */
+const SECTIONS = {
+  meta: '## 组织数据',
+  repos: '### 仓库',
+  languages: '### 语言分布',
+  contributors: '### 成员贡献',
+};
+
+function inject(src, heading, html) {
+  const lines = src.split('\n');
+  const hi = lines.findIndex((l) => l.trim() === heading);
+  if (hi < 0) {
+    throw new Error(`heading "${heading}" not found in profile/README.md`);
+  }
+  let ei = hi + 1;
+  while (ei < lines.length && !/^#{1,6}\s/.test(lines[ei]) && lines[ei].trim() !== '---') {
+    ei += 1;
+  }
+  return [...lines.slice(0, hi + 1), '', html, '', ...lines.slice(ei)].join('\n');
 }
 
 async function main() {
@@ -76,7 +94,7 @@ async function main() {
 
   let readme = fs.readFileSync(README, 'utf8');
   for (const [key, html] of Object.entries(blocks)) {
-    readme = inject(readme, key, html);
+    readme = inject(readme, SECTIONS[key], html);
   }
   fs.writeFileSync(README, readme, 'utf8');
   log('injected blocks:', Object.keys(blocks).join(', '));
