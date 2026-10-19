@@ -1,4 +1,4 @@
-[![XILI-AI](https://xili-ai.github.io/assets/image/logo.png)](https://xili-ai.github.io/)
+[![XILI-AI](https://xili-ai.github.io/assets/vis/hero.svg)](https://xili-ai.github.io/)
 
 # 苏州矽励科技有限公司 · XILI-AI
 
@@ -42,6 +42,8 @@
 | 前端 | Vue 3 · TypeScript · Vite · Naive UI · Pinia · ECharts |
 | 桌面端 | tkinter · Labelme |
 | 工程 | uv · Docker · pytest · GitHub Actions |
+
+![XILI-AI 芯片](https://xili-ai.github.io/assets/vis/cpu.svg)
 
 ---
 
