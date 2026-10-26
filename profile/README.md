@@ -1,4 +1,4 @@
-[![XILI-AI](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/hero.svg?v=mvnkb6co)](https://xili-ai.github.io/)
+[![XILI-AI](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/hero.svg?v=mvp0tpic)](https://xili-ai.github.io/)
 
 # 苏州矽励科技有限公司 · XILI-AI
 
@@ -6,19 +6,19 @@
 
 **[进入官网 →](https://xili-ai.github.io/)**
 
-![关于苏州矽励科技有限公司](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/about.svg?v=mvnkb6co)
+![关于苏州矽励科技有限公司](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/about.svg?v=mvp0tpic)
 
-![项目](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/projects.svg?v=mvnkb6co)
+![项目](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/projects.svg?v=mvp0tpic)
 
-![XILI-AI 芯片](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/cpu.svg?v=mvnkb6co)
+![XILI-AI 芯片](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/cpu.svg?v=mvp0tpic)
 
-![技术栈](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/stack.svg?v=mvnkb6co)
+![技术栈](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/stack.svg?v=mvp0tpic)
 
-![组织数据](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/stats.svg?v=mvnkb6co)
+![组织数据](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/stats.svg?v=mvp0tpic)
 
-![成员贡献](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/contributors.svg?v=mvnkb6co)
+![成员贡献](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/contributors.svg?v=mvp0tpic)
 
-![联系我们](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/contact.svg?v=mvnkb6co)
+![联系我们](https://raw.githubusercontent.com/Xili-AI/Xili-AI.github.io/main/assets/vis/contact.svg?v=mvp0tpic)
 
 ---
 
